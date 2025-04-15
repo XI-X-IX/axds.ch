@@ -1,0 +1,1975 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-gray-900 text-white;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+/* Animations personnalisées */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Effet de glassmorphisme */
+.glass {
+  @apply bg-gray-800/80 backdrop-blur-md;
+}
+
+/* Effet de hover sur les liens */
+.hover-link {
+  @apply transition-colors duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les boutons */
+.hover-button {
+  @apply transition-all duration-300 hover:scale-105;
+}
+
+/* Effet de hover sur les cartes */
+.hover-card {
+  @apply transition-all duration-300 hover:shadow-xl hover:shadow-primary-500/20;
+}
+
+/* Effet de hover sur les icônes */
+.hover-icon {
+  @apply transition-colors duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les inputs */
+.hover-input {
+  @apply transition-all duration-300 focus:ring-2 focus:ring-primary-500 focus:border-transparent;
+}
+
+/* Effet de hover sur les textareas */
+.hover-textarea {
+  @apply transition-all duration-300 focus:ring-2 focus:ring-primary-500 focus:border-transparent;
+}
+
+/* Effet de hover sur les boutons de soumission */
+.hover-submit {
+  @apply transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary-500/20;
+}
+
+/* Effet de hover sur les liens de téléchargement */
+.hover-download {
+  @apply transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary-500/20;
+}
+
+/* Effet de hover sur les liens de réseaux sociaux */
+.hover-social {
+  @apply transition-all duration-300 hover:scale-110 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de navigation */
+.hover-nav {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de footer */
+.hover-footer {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de contact */
+.hover-contact {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de projets */
+.hover-project {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de CV */
+.hover-cv {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de compétences */
+.hover-skill {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de formation */
+.hover-education {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens d'expérience */
+.hover-experience {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de portfolio */
+.hover-portfolio {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de blog */
+.hover-blog {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de services */
+.hover-service {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de tarifs */
+.hover-pricing {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de témoignages */
+.hover-testimonial {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de FAQ */
+.hover-faq {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de contact */
+.hover-contact {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de téléchargement */
+.hover-download {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de réseaux sociaux */
+.hover-social {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de navigation */
+.hover-nav {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de footer */
+.hover-footer {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de contact */
+.hover-contact {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de projets */
+.hover-project {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de CV */
+.hover-cv {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de compétences */
+.hover-skill {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de formation */
+.hover-education {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens d'expérience */
+.hover-experience {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de portfolio */
+.hover-portfolio {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de blog */
+.hover-blog {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de services */
+.hover-service {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de tarifs */
+.hover-pricing {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de témoignages */
+.hover-testimonial {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de FAQ */
+.hover-faq {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de contact */
+.hover-contact {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de téléchargement */
+.hover-download {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de réseaux sociaux */
+.hover-social {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de navigation */
+.hover-nav {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de footer */
+.hover-footer {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de contact */
+.hover-contact {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de projets */
+.hover-project {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de CV */
+.hover-cv {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de compétences */
+.hover-skill {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de formation */
+.hover-education {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens d'expérience */
+.hover-experience {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de portfolio */
+.hover-portfolio {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de blog */
+.hover-blog {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de services */
+.hover-service {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de tarifs */
+.hover-pricing {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de témoignages */
+.hover-testimonial {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de FAQ */
+.hover-faq {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de contact */
+.hover-contact {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de téléchargement */
+.hover-download {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de réseaux sociaux */
+.hover-social {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de navigation */
+.hover-nav {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de footer */
+.hover-footer {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de contact */
+.hover-contact {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de projets */
+.hover-project {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de CV */
+.hover-cv {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de compétences */
+.hover-skill {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de formation */
+.hover-education {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens d'expérience */
+.hover-experience {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de portfolio */
+.hover-portfolio {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de blog */
+.hover-blog {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de services */
+.hover-service {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de tarifs */
+.hover-pricing {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de témoignages */
+.hover-testimonial {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de FAQ */
+.hover-faq {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de contact */
+.hover-contact {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de téléchargement */
+.hover-download {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de réseaux sociaux */
+.hover-social {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de navigation */
+.hover-nav {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de footer */
+.hover-footer {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de contact */
+.hover-contact {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de projets */
+.hover-project {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de CV */
+.hover-cv {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de compétences */
+.hover-skill {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de formation */
+.hover-education {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens d'expérience */
+.hover-experience {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de portfolio */
+.hover-portfolio {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de blog */
+.hover-blog {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de services */
+.hover-service {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de tarifs */
+.hover-pricing {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de témoignages */
+.hover-testimonial {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de FAQ */
+.hover-faq {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de contact */
+.hover-contact {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de téléchargement */
+.hover-download {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de réseaux sociaux */
+.hover-social {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de navigation */
+.hover-nav {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de footer */
+.hover-footer {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de contact */
+.hover-contact {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de projets */
+.hover-project {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de CV */
+.hover-cv {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de compétences */
+.hover-skill {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de formation */
+.hover-education {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens d'expérience */
+.hover-experience {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de portfolio */
+.hover-portfolio {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de blog */
+.hover-blog {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de services */
+.hover-service {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de tarifs */
+.hover-pricing {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de témoignages */
+.hover-testimonial {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de FAQ */
+.hover-faq {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de contact */
+.hover-contact {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de téléchargement */
+.hover-download {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de réseaux sociaux */
+.hover-social {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de navigation */
+.hover-nav {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de footer */
+.hover-footer {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de contact */
+.hover-contact {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de projets */
+.hover-project {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de CV */
+.hover-cv {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de compétences */
+.hover-skill {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de formation */
+.hover-education {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens d'expérience */
+.hover-experience {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de portfolio */
+.hover-portfolio {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de blog */
+.hover-blog {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de services */
+.hover-service {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de tarifs */
+.hover-pricing {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de témoignages */
+.hover-testimonial {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de FAQ */
+.hover-faq {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de contact */
+.hover-contact {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de téléchargement */
+.hover-download {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de réseaux sociaux */
+.hover-social {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de navigation */
+.hover-nav {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de footer */
+.hover-footer {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de contact */
+.hover-contact {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de projets */
+.hover-project {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de CV */
+.hover-cv {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de compétences */
+.hover-skill {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de formation */
+.hover-education {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens d'expérience */
+.hover-experience {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de portfolio */
+.hover-portfolio {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de blog */
+.hover-blog {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de services */
+.hover-service {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de tarifs */
+.hover-pricing {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de témoignages */
+.hover-testimonial {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de FAQ */
+.hover-faq {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de contact */
+.hover-contact {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de téléchargement */
+.hover-download {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de réseaux sociaux */
+.hover-social {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de navigation */
+.hover-nav {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de footer */
+.hover-footer {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de contact */
+.hover-contact {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de projets */
+.hover-project {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de CV */
+.hover-cv {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de compétences */
+.hover-skill {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de formation */
+.hover-education {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens d'expérience */
+.hover-experience {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de portfolio */
+.hover-portfolio {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de blog */
+.hover-blog {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de services */
+.hover-service {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de tarifs */
+.hover-pricing {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de témoignages */
+.hover-testimonial {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de FAQ */
+.hover-faq {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de contact */
+.hover-contact {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de téléchargement */
+.hover-download {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de réseaux sociaux */
+.hover-social {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de navigation */
+.hover-nav {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de footer */
+.hover-footer {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de contact */
+.hover-contact {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de projets */
+.hover-project {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de CV */
+.hover-cv {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de compétences */
+.hover-skill {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de formation */
+.hover-education {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens d'expérience */
+.hover-experience {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de portfolio */
+.hover-portfolio {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de blog */
+.hover-blog {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de services */
+.hover-service {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de tarifs */
+.hover-pricing {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de témoignages */
+.hover-testimonial {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de FAQ */
+.hover-faq {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de contact */
+.hover-contact {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de téléchargement */
+.hover-download {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de réseaux sociaux */
+.hover-social {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de navigation */
+.hover-nav {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de footer */
+.hover-footer {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de contact */
+.hover-contact {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de projets */
+.hover-project {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de CV */
+.hover-cv {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de compétences */
+.hover-skill {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de formation */
+.hover-education {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens d'expérience */
+.hover-experience {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de portfolio */
+.hover-portfolio {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de blog */
+.hover-blog {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de services */
+.hover-service {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de tarifs */
+.hover-pricing {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de témoignages */
+.hover-testimonial {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de FAQ */
+.hover-faq {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de contact */
+.hover-contact {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de téléchargement */
+.hover-download {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de réseaux sociaux */
+.hover-social {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de navigation */
+.hover-nav {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de footer */
+.hover-footer {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de contact */
+.hover-contact {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de projets */
+.hover-project {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de CV */
+.hover-cv {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de compétences */
+.hover-skill {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de formation */
+.hover-education {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens d'expérience */
+.hover-experience {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de portfolio */
+.hover-portfolio {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de blog */
+.hover-blog {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de services */
+.hover-service {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de tarifs */
+.hover-pricing {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de témoignages */
+.hover-testimonial {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de FAQ */
+.hover-faq {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de contact */
+.hover-contact {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de téléchargement */
+.hover-download {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de réseaux sociaux */
+.hover-social {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de navigation */
+.hover-nav {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de footer */
+.hover-footer {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de contact */
+.hover-contact {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de projets */
+.hover-project {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de CV */
+.hover-cv {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de compétences */
+.hover-skill {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de formation */
+.hover-education {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens d'expérience */
+.hover-experience {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de portfolio */
+.hover-portfolio {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de blog */
+.hover-blog {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de services */
+.hover-service {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de tarifs */
+.hover-pricing {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de témoignages */
+.hover-testimonial {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de FAQ */
+.hover-faq {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de contact */
+.hover-contact {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de téléchargement */
+.hover-download {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de réseaux sociaux */
+.hover-social {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de navigation */
+.hover-nav {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de footer */
+.hover-footer {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de contact */
+.hover-contact {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de projets */
+.hover-project {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de CV */
+.hover-cv {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de compétences */
+.hover-skill {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de formation */
+.hover-education {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens d'expérience */
+.hover-experience {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de portfolio */
+.hover-portfolio {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de blog */
+.hover-blog {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de services */
+.hover-service {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de tarifs */
+.hover-pricing {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de témoignages */
+.hover-testimonial {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de FAQ */
+.hover-faq {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de contact */
+.hover-contact {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de téléchargement */
+.hover-download {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de réseaux sociaux */
+.hover-social {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de navigation */
+.hover-nav {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de footer */
+.hover-footer {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de contact */
+.hover-contact {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de projets */
+.hover-project {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de CV */
+.hover-cv {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de compétences */
+.hover-skill {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de formation */
+.hover-education {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens d'expérience */
+.hover-experience {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de portfolio */
+.hover-portfolio {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de blog */
+.hover-blog {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de services */
+.hover-service {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de tarifs */
+.hover-pricing {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de témoignages */
+.hover-testimonial {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de FAQ */
+.hover-faq {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de contact */
+.hover-contact {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de téléchargement */
+.hover-download {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de réseaux sociaux */
+.hover-social {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de navigation */
+.hover-nav {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de footer */
+.hover-footer {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de contact */
+.hover-contact {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de projets */
+.hover-project {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de CV */
+.hover-cv {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de compétences */
+.hover-skill {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de formation */
+.hover-education {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens d'expérience */
+.hover-experience {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de portfolio */
+.hover-portfolio {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de blog */
+.hover-blog {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de services */
+.hover-service {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de tarifs */
+.hover-pricing {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de témoignages */
+.hover-testimonial {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de FAQ */
+.hover-faq {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de contact */
+.hover-contact {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de téléchargement */
+.hover-download {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de réseaux sociaux */
+.hover-social {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de navigation */
+.hover-nav {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de footer */
+.hover-footer {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de contact */
+.hover-contact {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de projets */
+.hover-project {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de CV */
+.hover-cv {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de compétences */
+.hover-skill {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de formation */
+.hover-education {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens d'expérience */
+.hover-experience {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de portfolio */
+.hover-portfolio {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de blog */
+.hover-blog {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de services */
+.hover-service {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de tarifs */
+.hover-pricing {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de témoignages */
+.hover-testimonial {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de FAQ */
+.hover-faq {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de contact */
+.hover-contact {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de téléchargement */
+.hover-download {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de réseaux sociaux */
+.hover-social {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de navigation */
+.hover-nav {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de footer */
+.hover-footer {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de contact */
+.hover-contact {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de projets */
+.hover-project {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de CV */
+.hover-cv {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de compétences */
+.hover-skill {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de formation */
+.hover-education {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens d'expérience */
+.hover-experience {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de portfolio */
+.hover-portfolio {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de blog */
+.hover-blog {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de services */
+.hover-service {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de tarifs */
+.hover-pricing {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de témoignages */
+.hover-testimonial {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de FAQ */
+.hover-faq {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de contact */
+.hover-contact {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de téléchargement */
+.hover-download {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de réseaux sociaux */
+.hover-social {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de navigation */
+.hover-nav {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de footer */
+.hover-footer {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de contact */
+.hover-contact {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de projets */
+.hover-project {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de CV */
+.hover-cv {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de compétences */
+.hover-skill {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de formation */
+.hover-education {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens d'expérience */
+.hover-experience {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de portfolio */
+.hover-portfolio {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de blog */
+.hover-blog {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de services */
+.hover-service {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de tarifs */
+.hover-pricing {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de témoignages */
+.hover-testimonial {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de FAQ */
+.hover-faq {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de contact */
+.hover-contact {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de téléchargement */
+.hover-download {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de réseaux sociaux */
+.hover-social {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de navigation */
+.hover-nav {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de footer */
+.hover-footer {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de contact */
+.hover-contact {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de projets */
+.hover-project {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de CV */
+.hover-cv {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de compétences */
+.hover-skill {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de formation */
+.hover-education {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens d'expérience */
+.hover-experience {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de portfolio */
+.hover-portfolio {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de blog */
+.hover-blog {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de services */
+.hover-service {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de tarifs */
+.hover-pricing {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de témoignages */
+.hover-testimonial {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de FAQ */
+.hover-faq {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de contact */
+.hover-contact {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de téléchargement */
+.hover-download {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de réseaux sociaux */
+.hover-social {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de navigation */
+.hover-nav {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de footer */
+.hover-footer {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de contact */
+.hover-contact {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de projets */
+.hover-project {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de CV */
+.hover-cv {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de compétences */
+.hover-skill {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de formation */
+.hover-education {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens d'expérience */
+.hover-experience {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de portfolio */
+.hover-portfolio {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de blog */
+.hover-blog {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de services */
+.hover-service {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de tarifs */
+.hover-pricing {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de témoignages */
+.hover-testimonial {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de FAQ */
+.hover-faq {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de contact */
+.hover-contact {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de téléchargement */
+.hover-download {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de réseaux sociaux */
+.hover-social {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de navigation */
+.hover-nav {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de footer */
+.hover-footer {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de contact */
+.hover-contact {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de projets */
+.hover-project {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de CV */
+.hover-cv {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de compétences */
+.hover-skill {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de formation */
+.hover-education {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens d'expérience */
+.hover-experience {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de portfolio */
+.hover-portfolio {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de blog */
+.hover-blog {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de services */
+.hover-service {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de tarifs */
+.hover-pricing {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de témoignages */
+.hover-testimonial {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de FAQ */
+.hover-faq {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de contact */
+.hover-contact {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de téléchargement */
+.hover-download {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de réseaux sociaux */
+.hover-social {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de navigation */
+.hover-nav {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de footer */
+.hover-footer {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de contact */
+.hover-contact {
+  @apply transition-all duration-300 hover:text-primary-400;
+}
+
+/* Effet de hover sur les liens de projets */
+.hover-project {
+ 
