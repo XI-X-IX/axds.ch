@@ -28,7 +28,7 @@ const Contact = () => {
           className="max-w-3xl mx-auto text-center mb-16"
         >
           <h2 className="text-4xl font-bold mb-6 text-white text-glow">
-            Travaillons ensemble ?
+            Un café et des idées ?
           </h2>
           <p className="text-gray-300 text-lg">
             N&apos;hésitez pas à me contacter pour discuter de vos projets ou pour toute question.
