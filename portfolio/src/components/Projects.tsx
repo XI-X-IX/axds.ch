@@ -6,38 +6,45 @@ import { useState } from 'react';
 const projects = [
   {
     title: 'Bot de Trading',
-    description: 'Bot automatisé pour le trading de cryptomonnaies, permettant d\'analyser les tendances du marché et d\'exécuter des transactions optimisées en temps réel.',
+    description: 'Bot automatisé pour le trading de cryptomonnaies, analyser les tendances du marché et exécuter des transactions optimisées.',
     image: '/trading-bot-neon.jpg', // Image néon pour le bot de trading
-    github: 'https://github.com',
+    github: 'https://github.com/AlgoTraderX',
     demo: 'https://demo.com',
     tags: ['Python', 'API', 'Algorithmes', 'Finance'],
     category: 'backend'
   },
   {
-    title: 'Portfolio Personnel',
-    description: 'Site web portfolio moderne et réactif avec animations fluides, conçu et développé avec Next.js et Tailwind CSS pour présenter mes projets et compétences.',
+    title: 'Site Web',
+    description: 'Site web moderne et réactif avec animations fluides, conçu et développé avec Next.js et Tailwind CSS.',
     image: '/portfolio-neon.jpg', // Image néon pour le portfolio
-    github: 'https://github.com',
-    demo: 'https://demo.com',
+    github: 'https://github.com/axds.ch',
+    demo: 'https://axds.ch',
     tags: ['TypeScript', 'JavaScript', 'CSS', 'Next.js', 'Tailwind'],
     category: 'frontend'
   },
   {
-    title: 'Jeu Vidéo 2D',
-    description: 'Jeu vidéo 2D développé en C pur avec une gestion optimisée de la mémoire et des performances. Graphismes et logique de jeu entièrement créés à partir de zéro.',
-    image: '/game-neon.jpg', // Image néon pour le jeu
+    title: 'Game',
+    description: 'Jeu vidéo 2D développé en C pur. Graphismes et logique de jeu entièrement créés à partir de zéro.',
+    image: '/game-neon.png', // Image néon pour le jeu
     github: 'https://github.com',
     demo: 'https://demo.com',
     tags: ['C', 'Makefile', 'Game Development', 'Algorithms'],
     category: 'other'
   },
   {
-    title: 'Push_swap',
-    description: 'Programme de tri hautement optimisé qui utilise deux piles pour trier les données avec un nombre minimum d\'opérations. Implémentation d\'algorithmes de tri avancés.',
-    image: '/algo-neon.jpg', // Image néon pour l'algorithme
-    github: 'https://github.com',
-    demo: 'https://demo.com',
-    tags: ['C', 'Makefile', 'Algorithmes', 'Structures de données'],
+    title: 'Algorithmes',
+    description: 'Programme de tri hautement optimisé qui utilise deux piles pour trier les données avec un nombre minimum d\'opérations.',
+    image: '/algo-neon.png', // Image néon pour l'algorithme
+    github: 'https://github.com/push_swap',
+    tags: ['C', 'Maths', 'Algorithmes', 'Structures de données'],
+    category: 'other'
+  },
+  {
+    title: 'Automatisation',
+    description: 'Accroître l’efficacité, la précision et la rapidité d’exécution, avec un minimum d’intervention humaine.',
+    image: '/auto-neon.png', // Image néon pour l'algorithme
+    github: 'https://github.com/push_swap',
+    tags: ['IA', 'Workflow', 'CI/CD', 'Pipelines'],
     category: 'other'
   },
 ];

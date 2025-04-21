@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useState, useEffect } from 'react';
+import SkillsCarousel, { SkillCategory } from './SkillsCarousel';
 
 // Ajout d'icônes pour les compétences
 const skillIcons = {
@@ -16,9 +17,22 @@ const skillIcons = {
   'Docker': '🐳',
   'VS Code': '📝',
   'Figma': '🎨',
+  'Python': '🐍',
+  'TensorFlow': '🧠',
+  'PyTorch': '🔥',
+  'Scikit-Learn': '🔬',
+  'C': '🔋',
+  'C++': '⚙️',
+  'Java': '☕',
+  'Rust': '🦀',
+  'Trading Algorithms': '📈',
+  'Risk Management': '🛡️',
+  'Market Analysis': '📊',
+  'Financial Modeling': '💹',
 };
 
-const skills = [
+// Liste des compétences principales
+const skills: SkillCategory[] = [
   {
     title: 'Frontend',
     items: [
@@ -48,6 +62,37 @@ const skills = [
   },
 ];
 
+// Compétences additionnelles
+const additionalSkills: SkillCategory[] = [
+  {
+    title: 'IA',
+    items: [
+      { name: 'Python', level: 85 },
+      { name: 'TensorFlow', level: 75 },
+      { name: 'PyTorch', level: 70 },
+      { name: 'Scikit-Learn', level: 80 },
+    ],
+  },
+  {
+    title: 'Languages',
+    items: [
+      { name: 'C', level: 85 },
+      { name: 'C++', level: 80 },
+      { name: 'Java', level: 70 },
+      { name: 'Rust', level: 65 },
+    ],
+  },
+  {
+    title: 'Finance',
+    items: [
+      { name: 'Trading Algorithms', level: 80 },
+      { name: 'Risk Management', level: 75 },
+      { name: 'Market Analysis', level: 85 },
+      { name: 'Financial Modeling', level: 70 },
+    ],
+  },
+];
+
 // Animation pour l'effet de texte machine à écrire
 const TypewriterText = ({ text }: { text: string }) => {
   const [displayText, setDisplayText] = useState('');
@@ -73,30 +118,19 @@ const About = () => {
     threshold: 0.1,
   });
 
-  // Animation des cards qui apparaissent l'une après l'autre
-  const cardVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: (i: number) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: i * 0.3,
-        duration: 0.5,
-        ease: "easeOut",
-      },
-    }),
-  };
-
   return (
-    <section id="about" className="py-20 bg-gray-900 relative overflow-hidden">
+    <section id="about" className="py-20 bg-dark-900 relative overflow-hidden">
+      {/* Effets de fond cyberpunk */}
+      <div className="absolute inset-0 cyber-dots opacity-30"></div>
+      
       {/* Éléments décoratifs en arrière-plan */}
-      <div className="absolute top-0 left-0 w-full h-full">
-        <div className="absolute top-10 left-10 w-32 h-32 bg-primary-500 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-blob"></div>
-        <div className="absolute top-40 right-20 w-40 h-40 bg-secondary-500 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-blob animation-delay-2000"></div>
-        <div className="absolute bottom-20 left-1/4 w-36 h-36 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-blob animation-delay-4000"></div>
+      <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
+        <div className="absolute top-40 left-1/4 w-72 h-72 rounded-full bg-neon-blue/5 filter blur-3xl animate-blob animation-delay-4000"></div>
+        <div className="absolute bottom-20 right-20 w-64 h-64 rounded-full bg-neon-pink/5 filter blur-3xl animate-blob animation-delay-2000"></div>
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
+        {/* Section d'introduction */}
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 20 }}
@@ -105,7 +139,7 @@ const About = () => {
           className="max-w-3xl mx-auto text-center mb-16"
         >
           <motion.h2 
-            className="text-4xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary-400 to-secondary-500"
+            className="text-4xl font-bold mb-6 text-white text-glow"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={inView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.5 }}
@@ -119,72 +153,46 @@ const About = () => {
             animate={inView ? { opacity: 1 } : {}}
             transition={{ delay: 0.3, duration: 0.8 }}
           >
-            {inView && <TypewriterText text="" />}
+            {inView && <TypewriterText text="Développeuse passionnée par la création d'expériences web innovantes et performantes." />}
           </motion.div>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {skills.map((skill, index) => (
-            <motion.div
-              key={skill.title}
-              custom={index}
-              variants={cardVariants}
-              initial="hidden"
-              animate={inView ? "visible" : "hidden"}
-              whileHover={{ y: -10, boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)" }}
-              className="bg-gray-800 rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform"
-            >
-              <motion.h3 
-                className="text-2xl font-semibold mb-6 text-white text-center"
-                initial={{ opacity: 0 }}
-                animate={inView ? { opacity: 1 } : {}}
-                transition={{ delay: index * 0.2 + 0.3, duration: 0.5 }}
-              >
-                {skill.title}
-              </motion.h3>
-              
-              <ul className="space-y-4">
-                {skill.items.map((item, itemIndex) => (
-                  <motion.li 
-                    key={item.name} 
-                    className="text-gray-300"
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={inView ? { opacity: 1, x: 0 } : {}}
-                    transition={{ delay: index * 0.2 + itemIndex * 0.1 + 0.5, duration: 0.5 }}
-                  >
-                    <div className="flex items-center mb-1">
-                      <span className="mr-2 text-xl">{skillIcons[item.name as keyof typeof skillIcons]}</span>
-                      <span>{item.name}</span>
-                      <span className="ml-auto text-sm text-gray-400">{item.level}%</span>
-                    </div>
-                    <div className="w-full bg-gray-700 rounded-full h-2.5">
-                      <motion.div 
-                        className="bg-gradient-to-r from-primary-500 to-secondary-500 h-2.5 rounded-full"
-                        initial={{ width: 0 }}
-                        animate={inView ? { width: `${item.level}%` } : {}}
-                        transition={{ delay: index * 0.2 + itemIndex * 0.1 + 0.8, duration: 0.8, ease: "easeOut" }}
-                      ></motion.div>
-                    </div>
-                  </motion.li>
-                ))}
-              </ul>
-            </motion.div>
-          ))}
-        </div>
+        {/* Section Skills avec carrousel */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 0.5, duration: 0.8 }}
+          className="mb-20"
+        >
+          <h3 className="text-3xl font-bold text-center text-white mb-8 text-glow-sm">
+            Mes <span className="text-neon-blue">Skills</span>
+          </h3>
+          
+          {/* Intégration du carrousel de compétences */}
+          <SkillsCarousel 
+            skillCategories={skills} 
+            additionalSkills={additionalSkills}
+            skillIcons={skillIcons} 
+            inView={inView} 
+          />
+        </motion.div>
         
         {/* Section expérience professionnelle */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 1.2, duration: 0.8 }}
-          className="mt-20 max-w-4xl mx-auto"
+          className="mt-20 max-w-4xl mx-auto bg-gray-900/80 backdrop-blur-sm border border-gray-800 rounded-lg p-8 transition-all duration-300 transform hover:bg-gray-800/90 group hover:border-neon-blue/50 hover:shadow-glow-blue relative"
         >
-          <h3 className="text-2xl font-semibold mb-8 text-center text-white">Mon parcours</h3>
-          <div className="relative pl-8 border-l-2 border-primary-500">
+          <div className="absolute inset-0 rounded-lg bg-grid-white/[0.02] -z-10 group-hover:bg-grid-white/[0.03]" />
+          <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-transparent to-transparent group-hover:from-transparent group-hover:via-neon-blue/10 group-hover:to-transparent transition-all duration-500"></div>
+
+          <h3 className="text-2xl font-semibold mb-8 text-center text-white text-glow-sm group-hover:text-neon-blue transition-colors duration-300">Objectifs</h3>
+          <div className="relative pl-8 border-l-2 border-neon-blue">
             {[
-              { period: "2023 - Présent", role: "Développeur Full Stack", company: "Entreprise Actuelle" },
-              { period: "2021 - 2023", role: "Développeur Frontend", company: "Entreprise Précédente" },
-              { period: "2019 - 2021", role: "Développeur Junior", company: "Première Entreprise" },
+              { period: "En cours", role: "Dev Junior Freelance", company: "AXDS" },
+              { period: "Début 2026", role: "Spécialisation IA / Cybersécurité", company: "42 Lausanne" },
+              { period: "2026 - 2027", role: "Création de Startup", company: "" },
             ].map((exp, index) => (
               <motion.div 
                 key={index}
@@ -193,10 +201,10 @@ const About = () => {
                 animate={inView ? { opacity: 1, x: 0 } : {}}
                 transition={{ delay: 1.4 + index * 0.2, duration: 0.5 }}
               >
-                <div className="absolute -left-10 mt-1.5 w-4 h-4 rounded-full bg-primary-500 border-4 border-gray-900"></div>
-                <p className="text-sm text-primary-400 mb-1">{exp.period}</p>
-                <h4 className="text-lg font-medium text-white">{exp.role}</h4>
-                <p className="text-gray-400">{exp.company}</p>
+                <div className="absolute -left-10 mt-1.5 w-4 h-4 rounded-full bg-neon-blue border-4 border-gray-900 group-hover:shadow-glow-blue-sm transition-all duration-300"></div>
+                <p className="text-sm text-neon-blue mb-1">{exp.period}</p>
+                <h4 className="text-lg font-medium text-white group-hover:text-gray-100 transition-colors duration-300">{exp.role}</h4>
+                <p className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300">{exp.company}</p>
               </motion.div>
             ))}
           </div>

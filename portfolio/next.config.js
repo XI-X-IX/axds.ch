@@ -6,8 +6,8 @@ const nextConfig = {
     domains: [],
     unoptimized: true,
   },
-  // Configuration pour votre domaine axds.ch
-  assetPrefix: process.env.NODE_ENV === 'production' ? 'https://axds.ch' : '',
+  // Utiliser des chemins relatifs au lieu de l'URL absolue
+  assetPrefix: '',
   basePath: '',
 }
 

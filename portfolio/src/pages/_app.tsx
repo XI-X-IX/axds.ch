@@ -21,7 +21,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Portfolio | Votre Nom</title>
+        <title>• AXDS</title>
       </Head>
       <div className={`${inter.variable} ${robotoMono.variable} font-sans`}>
         <Component {...pageProps} />
