@@ -4,64 +4,168 @@ module.exports = {
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/styles/**/*.{js,ts,jsx,tsx,css}',
   ],
   theme: {
     extend: {
       colors: {
+        // Fond sombre
+        dark: {
+          900: '#080818', // Noir profond avec nuance de bleu
+          800: '#10101e', // Un peu plus clair
+          700: '#181828', // Encore un peu plus clair
+        },
+        // Bleu électrique néon
+        neon: {
+          blue: '#00f0ff',
+          purple: '#a200ff',
+          pink: '#ff00dd',
+          cyan: '#00e5ff',
+        },
+        // Dégradés primaires et secondaires
         primary: {
-          50: '#f0f9ff',
-          100: '#e0f2fe',
-          200: '#bae6fd',
-          300: '#7dd3fc',
-          400: '#38bdf8',
-          500: '#0ea5e9',
-          600: '#0284c7',
-          700: '#0369a1',
-          800: '#075985',
-          900: '#0c4a6e',
-          950: '#082f49',
+          300: '#00e5ff',
+          400: '#00b8ff',
+          500: '#0090ff', // Couleur principale
+          600: '#0070ff',
+          700: '#0055ff',
         },
         secondary: {
-          50: '#f5f3ff',
-          100: '#ede9fe',
-          200: '#ddd6fe',
-          300: '#c4b5fd',
-          400: '#a78bfa',
-          500: '#8b5cf6',
-          600: '#7c3aed',
-          700: '#6d28d9',
-          800: '#5b21b6',
-          900: '#4c1d95',
-          950: '#2e1065',
+          300: '#f700ff',
+          400: '#dc00ff',
+          500: '#c500ff', // Couleur secondaire
+          600: '#9600ff',
+          700: '#7d00ff',
         },
-        dark: {
-          50: '#f8fafc',
-          100: '#f1f5f9',
-          200: '#e2e8f0',
-          300: '#cbd5e1',
-          400: '#94a3b8',
-          500: '#64748b',
-          600: '#475569',
-          700: '#334155',
-          800: '#1e293b',
-          900: '#0f172a',
-          950: '#020617',
+        // Couleurs d'accent
+        accent: {
+          cyan: '#00ffe1',
+          purple: '#d600ff',
+          pink: '#ff007e',
+          yellow: '#fff700',
+        },
+        // Couleurs dégradées pour glassmorphisme
+        glass: {
+          light: 'rgba(255, 255, 255, 0.08)',
+          medium: 'rgba(255, 255, 255, 0.05)',
+          dark: 'rgba(0, 0, 0, 0.3)',
         },
       },
       fontFamily: {
-        sans: ['var(--font-inter)'],
-        mono: ['var(--font-roboto-mono)'],
+        sans: ['Inter', 'Roboto', 'system-ui', 'sans-serif'],
+        display: ['Background', 'Orbitron', 'Inter', 'sans-serif'],
+        mono: ['JetBrains Mono', 'Consolas', 'monospace'],
+      },
+      boxShadow: {
+        'neon-blue': '0 0 5px #00f0ff, 0 0 20px rgba(0, 240, 255, 0.3)',
+        'neon-pink': '0 0 5px #ff00dd, 0 0 20px rgba(255, 0, 221, 0.3)',
+        'neon-purple': '0 0 5px #a200ff, 0 0 20px rgba(162, 0, 255, 0.3)',
+        'neon-sm': '0 0 2px rgba(255, 255, 255, 0.3)',
+        'neon-md': '0 0 8px rgba(0, 230, 255, 0.5)',
+        'neon-lg': '0 0 15px rgba(0, 230, 255, 0.5), 0 0 30px rgba(0, 230, 255, 0.3)',
+        'neon-xl': '0 0 20px rgba(0, 230, 255, 0.7), 0 0 40px rgba(0, 230, 255, 0.4)',
+        'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.37)',
+      },
+      backgroundImage: {
+        'neon-gradient': 'linear-gradient(90deg, #00f0ff, #a200ff, #ff00dd)',
+        'cyberpunk-gradient': 'linear-gradient(45deg, #00f0ff, #0090ff, #a200ff, #ff00dd)',
+        'tech-grid': 'url("/grid.svg")',
       },
       animation: {
-        'float': 'float 3s ease-in-out infinite',
+        'neon-pulse': 'neon-pulse 2s infinite',
+        'neon-glow': 'neon-glow 2s infinite alternate',
+        'text-shimmer': 'text-shimmer 2.5s linear infinite',
+        'drift-x': 'drift-x 20s linear infinite',
+        'drift-y': 'drift-y 15s linear infinite',
+        'blob': 'blob 7s infinite',
+        'float': 'float 6s ease-in-out infinite',
       },
       keyframes: {
-        float: {
-          '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-10px)' },
+        'neon-pulse': {
+          '0%, 100%': { opacity: 1 },
+          '50%': { opacity: 0.6 },
         },
+        'neon-glow': {
+          '0%': { textShadow: '0 0 5px rgba(0, 240, 255, 0.8), 0 0 10px rgba(0, 240, 255, 0.5)' },
+          '100%': { textShadow: '0 0 10px rgba(0, 240, 255, 0.8), 0 0 20px rgba(0, 240, 255, 0.5), 0 0 30px rgba(0, 240, 255, 0.3)' },
+        },
+        'text-shimmer': {
+          '0%': { backgroundPosition: '0% 50%' },
+          '100%': { backgroundPosition: '100% 50%' },
+        },
+        'drift-x': {
+          '0%': { transform: 'translateX(0)' },
+          '50%': { transform: 'translateX(10px)' },
+          '100%': { transform: 'translateX(0)' },
+        },
+        'drift-y': {
+          '0%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(10px)' },
+          '100%': { transform: 'translateY(0)' },
+        },
+        'blob': {
+          '0%': {
+            transform: 'translate(0px, 0px) scale(1)',
+          },
+          '33%': {
+            transform: 'translate(30px, -30px) scale(1.1)',
+          },
+          '66%': {
+            transform: 'translate(-20px, 20px) scale(0.9)',
+          },
+          '100%': {
+            transform: 'translate(0px, 0px) scale(1)',
+          },
+        },
+        'float': {
+          '0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
+          '50%': { transform: 'translateY(-15px) rotate(2deg)' },
+        },
+      },
+      textShadow: {
+        'neon': '0 0 5px #fff, 0 0 10px #fff, 0 0 15px #00f0ff, 0 0 20px #00f0ff',
+        'neon-pink': '0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ff00dd, 0 0 20px #ff00dd',
+        'neon-sm': '0 0 2px rgba(0, 240, 255, 0.7)',
+        'neon-md': '0 0 4px rgba(0, 240, 255, 0.7), 0 0 8px rgba(0, 240, 255, 0.5)',
+        'neon-lg': '0 0 6px rgba(0, 240, 255, 0.7), 0 0 12px rgba(0, 240, 255, 0.5), 0 0 18px rgba(0, 240, 255, 0.3)',
+      },
+      backdropBlur: {
+        xs: '2px',
       },
     },
   },
-  plugins: [],
-} 
+  plugins: [
+    function ({ addUtilities }) {
+      const newUtilities = {
+        '.text-shadow-neon': {
+          textShadow: '0 0 5px rgba(255, 255, 255, 0.8), 0 0 10px rgba(0, 240, 255, 0.8), 0 0 15px rgba(0, 240, 255, 0.6), 0 0 20px rgba(0, 240, 255, 0.4)',
+        },
+        '.text-shadow-neon-pink': {
+          textShadow: '0 0 5px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 0, 221, 0.8), 0 0 15px rgba(255, 0, 221, 0.6), 0 0 20px rgba(255, 0, 221, 0.4)',
+        },
+        '.text-shadow-neon-sm': {
+          textShadow: '0 0 2px rgba(0, 240, 255, 0.7)',
+        },
+        '.text-shadow-neon-md': {
+          textShadow: '0 0 4px rgba(0, 240, 255, 0.7), 0 0 8px rgba(0, 240, 255, 0.5)',
+        },
+        '.backdrop-saturate-150': {
+          backdropFilter: 'saturate(150%)',
+        },
+        '.animation-delay-2000': {
+          animationDelay: '2s',
+        },
+        '.animation-delay-4000': {
+          animationDelay: '4s',
+        },
+        '.border-glow-blue': {
+          boxShadow: '0 0 5px #00f0ff, 0 0 5px #00f0ff inset',
+        },
+        '.border-glow-pink': {
+          boxShadow: '0 0 5px #ff00dd, 0 0 5px #ff00dd inset',
+        },
+      };
+      addUtilities(newUtilities);
+    },
+  ],
+}

@@ -24,7 +24,7 @@ const Layout = ({ children }: LayoutProps) => {
       </main>
       <footer className="py-8 bg-gray-800">
         <div className="container mx-auto px-4 text-center text-gray-400">
-          <p>&copy; {new Date().getFullYear()} Votre Nom. Tous droits réservés.</p>
+          <p>&copy; {new Date().getFullYear()} Alexandra Dos Santos. Tous droits réservés.</p>
         </div>
       </footer>
     </div>

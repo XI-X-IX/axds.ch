@@ -5,7 +5,7 @@ import { EnvelopeIcon, PhoneIcon, MapPinIcon } from '@heroicons/react/24/outline
 const socialLinks = [
   {
     name: 'GitHub',
-    url: 'https://github.com',
+    url: 'https://github.com/XI-X-IX',
     icon: (
       <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
         <path
@@ -38,8 +38,17 @@ const Contact = () => {
   });
 
   return (
-    <section id="contact" className="py-20 bg-gray-900">
-      <div className="container mx-auto px-4">
+    <section id="contact" className="py-20 bg-dark-900 relative overflow-hidden">
+      {/* Effets de fond cyberpunk */}
+      <div className="absolute inset-0 tech-grid-bg opacity-20"></div>
+      
+      {/* Éléments décoratifs en arrière-plan */}
+      <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
+        <div className="absolute bottom-20 right-20 w-64 h-64 rounded-full bg-neon-blue/5 filter blur-3xl animate-blob animation-delay-2000"></div>
+        <div className="absolute top-40 left-1/4 w-72 h-72 rounded-full bg-neon-pink/5 filter blur-3xl animate-blob animation-delay-4000"></div>
+      </div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 20 }}
@@ -47,7 +56,7 @@ const Contact = () => {
           transition={{ duration: 0.8 }}
           className="max-w-3xl mx-auto text-center mb-16"
         >
-          <h2 className="text-4xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary-400 to-secondary-500">
+          <h2 className="text-4xl font-bold mb-6 text-white text-glow">
             Me Contacter
           </h2>
           <p className="text-gray-300 text-lg">
@@ -60,34 +69,49 @@ const Contact = () => {
             initial={{ opacity: 0, x: -20 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ delay: 0.2, duration: 0.8 }}
-            className="space-y-6"
+            className="space-y-6 neon-card p-8"
           >
-            <div className="flex items-center space-x-4">
-              <EnvelopeIcon className="w-6 h-6 text-primary-400" />
-              <span className="text-gray-300">email@example.com</span>
+            <div className="flex items-center space-x-4 group hover:translate-x-2 transition-transform duration-300">
+              <div className="w-10 h-10 rounded-full flex items-center justify-center border border-neon-blue shadow-neon-blue">
+                <EnvelopeIcon className="w-5 h-5 text-neon-blue" />
+              </div>
+              <span className="text-gray-300 group-hover:text-neon-blue transition-colors duration-300">a.dos.santos@live.fr</span>
             </div>
-            <div className="flex items-center space-x-4">
-              <PhoneIcon className="w-6 h-6 text-primary-400" />
-              <span className="text-gray-300">+33 6 12 34 56 78</span>
+            
+            <div className="flex items-center space-x-4 group hover:translate-x-2 transition-transform duration-300">
+              <div className="w-10 h-10 rounded-full flex items-center justify-center border border-neon-blue shadow-neon-blue">
+                <PhoneIcon className="w-5 h-5 text-neon-blue" />
+              </div>
+              <span className="text-gray-300 group-hover:text-neon-blue transition-colors duration-300">+41 76 263 17 21</span>
             </div>
-            <div className="flex items-center space-x-4">
-              <MapPinIcon className="w-6 h-6 text-primary-400" />
-              <span className="text-gray-300">Paris, France</span>
+            
+            <div className="flex items-center space-x-4 group hover:translate-x-2 transition-transform duration-300">
+              <div className="w-10 h-10 rounded-full flex items-center justify-center border border-neon-blue shadow-neon-blue">
+                <MapPinIcon className="w-5 h-5 text-neon-blue" />
+              </div>
+              <span className="text-gray-300 group-hover:text-neon-blue transition-colors duration-300">Lausanne, Suisse</span>
             </div>
 
-            <div className="pt-6">
-              <h3 className="text-xl font-semibold mb-4 text-white">Réseaux sociaux</h3>
-              <div className="flex space-x-4">
-                {socialLinks.map((social) => (
-                  <a
+            <div className="pt-8 mt-8 border-t border-neon-blue/20">
+              <h3 className="text-xl font-semibold mb-6 text-white text-glow">Réseaux sociaux</h3>
+              <div className="flex space-x-6 justify-center">
+                {socialLinks.map((social, index) => (
+                  <motion.a
                     key={social.name}
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-white transition-colors duration-300"
+                    className="text-gray-400 hover:text-neon-blue transition-all duration-300 hover:scale-125"
+                    whileHover={{ 
+                      y: -5,
+                      textShadow: "0 0 8px #00f0ff"
+                    }}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={inView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ delay: 0.3 + index * 0.1 }}
                   >
                     {social.icon}
-                  </a>
+                  </motion.a>
                 ))}
               </div>
             </div>
@@ -97,47 +121,47 @@ const Contact = () => {
             initial={{ opacity: 0, x: 20 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ delay: 0.4, duration: 0.8 }}
-            className="space-y-6"
+            className="space-y-6 neon-card p-8"
           >
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+              <label htmlFor="name" className="block text-sm font-medium text-neon-blue mb-2">
                 Nom
               </label>
               <input
                 type="text"
                 id="name"
                 name="name"
-                className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-primary-500"
+                className="neon-input w-full"
                 required
               />
             </div>
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+              <label htmlFor="email" className="block text-sm font-medium text-neon-blue mb-2">
                 Email
               </label>
               <input
                 type="email"
                 id="email"
                 name="email"
-                className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-primary-500"
+                className="neon-input w-full"
                 required
               />
             </div>
             <div>
-              <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
+              <label htmlFor="message" className="block text-sm font-medium text-neon-blue mb-2">
                 Message
               </label>
               <textarea
                 id="message"
                 name="message"
                 rows={4}
-                className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-primary-500"
+                className="neon-input w-full resize-none"
                 required
               ></textarea>
             </div>
             <button
               type="submit"
-              className="w-full px-6 py-3 bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-medium rounded-md hover:from-primary-600 hover:to-secondary-600 transition-all duration-300"
+              className="w-full px-6 py-3 bg-dark-800 border border-neon-pink text-neon-pink shadow-neon-pink hover:bg-neon-pink/10 transition-all duration-300 rounded-md transform hover:scale-[1.02] hover:shadow-neon-lg"
             >
               Envoyer
             </button>
@@ -148,4 +172,4 @@ const Contact = () => {
   );
 };
 
-export default Contact; 
+export default Contact;
