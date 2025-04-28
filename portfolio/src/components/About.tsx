@@ -153,7 +153,7 @@ const About = () => {
             animate={inView ? { opacity: 1 } : {}}
             transition={{ delay: 0.3, duration: 0.8 }}
           >
-            {inView && <TypewriterText text="Développeuse passionnée par la création d'expériences web innovantes et performantes." />}
+            {inView && <TypewriterText text="Développeur passionné par la création d'expériences informatiques innovantes et performantes." />}
           </motion.div>
         </motion.div>
 
@@ -165,7 +165,7 @@ const About = () => {
           className="mb-20"
         >
           <h3 className="text-3xl font-bold text-center text-white mb-8 text-glow-sm">
-            Mes <span className="text-neon-blue">Skills</span>
+            <span className="text-neon-white">Skills</span>
           </h3>
           
           {/* Intégration du carrousel de compétences */}
@@ -191,8 +191,8 @@ const About = () => {
           <div className="relative pl-8 border-l-2 border-neon-blue">
             {[
               { period: "En cours", role: "Dev Junior Freelance", company: "AXDS" },
-              { period: "Début 2026", role: "Spécialisation IA / Cybersécurité", company: "42 Lausanne" },
-              { period: "2026 - 2027", role: "Création de Startup", company: "" },
+              { period: "Début 2026", role: "Spécialisation en Intelligence Artificielle", company: "42 Lausanne" },
+              { period: "2026 - 2027", role: "Création de Startup", company: "🚀" },
             ].map((exp, index) => (
               <motion.div 
                 key={index}

@@ -3,21 +3,24 @@ import { useInView } from 'react-intersection-observer';
 import { ArrowTopRightOnSquareIcon, CodeBracketIcon } from '@heroicons/react/24/outline';
 import { useState } from 'react';
 
+// Ajout d'un timestamp pour empêcher la mise en cache des images
+const cacheBreaker = Date.now();
+
 const projects = [
   {
     title: 'Bot de Trading',
     description: 'Bot automatisé pour le trading de cryptomonnaies, analyser les tendances du marché et exécuter des transactions optimisées.',
-    image: '/trading-bot-neon.jpg', // Image néon pour le bot de trading
-    github: 'https://github.com/AlgoTraderX',
-    demo: 'https://demo.com',
+    image: `/trading-bot-neon.jpg?v=${cacheBreaker}`, // Ajout d'un paramètre version
+    github: 'https://github.com/XI-X-IX/DemoXbot/blob/main/binance_rsi_bot.py',
+    demo: 'https://github.com/XI-X-IX/DemoXbot',
     tags: ['Python', 'API', 'Algorithmes', 'Finance'],
     category: 'backend'
   },
   {
     title: 'Site Web',
     description: 'Site web moderne et réactif avec animations fluides, conçu et développé avec Next.js et Tailwind CSS.',
-    image: '/portfolio-neon.jpg', // Image néon pour le portfolio
-    github: 'https://github.com/axds.ch',
+    image: `/portfolio-neon.jpg?v=${cacheBreaker}`, // Ajout d'un paramètre version
+    github: 'https://github.com/XI-X-IX/axds.ch',
     demo: 'https://axds.ch',
     tags: ['TypeScript', 'JavaScript', 'CSS', 'Next.js', 'Tailwind'],
     category: 'frontend'
@@ -25,25 +28,26 @@ const projects = [
   {
     title: 'Game',
     description: 'Jeu vidéo 2D développé en C pur. Graphismes et logique de jeu entièrement créés à partir de zéro.',
-    image: '/game-neon.png', // Image néon pour le jeu
+    image: `/game-neon.jpg?v=${cacheBreaker}`, // Ajout d'un paramètre version
     github: 'https://github.com',
-    demo: 'https://demo.com',
+    demo: '',
     tags: ['C', 'Makefile', 'Game Development', 'Algorithms'],
     category: 'other'
   },
   {
     title: 'Algorithmes',
     description: 'Programme de tri hautement optimisé qui utilise deux piles pour trier les données avec un nombre minimum d\'opérations.',
-    image: '/algo-neon.png', // Image néon pour l'algorithme
-    github: 'https://github.com/push_swap',
+    image: `/algo-neon.jpg?v=${cacheBreaker}`, // Ajout d'un paramètre version
+    github: 'https://github.com/XI-X-IX/push_swap',
+    demo: 'https://github.com/XI-X-IX/push_swap/blob/main/src/push_swap.c',
     tags: ['C', 'Maths', 'Algorithmes', 'Structures de données'],
     category: 'other'
   },
   {
     title: 'Automatisation',
-    description: 'Accroître l’efficacité, la précision et la rapidité d’exécution, avec un minimum d’intervention humaine.',
-    image: '/auto-neon.png', // Image néon pour l'algorithme
-    github: 'https://github.com/push_swap',
+    description: 'Accroître l\'efficacité, la précision et la rapidité d\'exécution, avec un minimum d\'intervention humaine.',
+    image: `/auto-bot.jpg?v=${cacheBreaker}`, // Ajout d'un paramètre version
+    github: '',
     tags: ['IA', 'Workflow', 'CI/CD', 'Pipelines'],
     category: 'other'
   },

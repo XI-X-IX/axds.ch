@@ -41,7 +41,7 @@ const Navbar = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <span className="bg-clip-text text-transparent text-glow hover:text-glow-lg duration-300">Hi</span>
+            <span className="bg-clip-text text-transparent text-glow hover:text-glow-lg duration-300">Hi there</span>
           </motion.a>
           
           {/* Navigation desktop */}

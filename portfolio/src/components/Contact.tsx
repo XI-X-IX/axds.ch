@@ -48,7 +48,7 @@ const Contact = () => {
                 <div className="w-10 h-10 rounded-full flex items-center justify-center border border-neon-blue shadow-neon-blue">
                   <EnvelopeIcon className="w-5 h-5 text-neon-blue" />
                 </div>
-                <span className="text-gray-300 group-hover:text-neon-blue transition-colors duration-300">a.dos.santos@live.fr</span>
+                <span className="text-gray-300 group-hover:text-neon-blue transition-colors duration-300">axds.contact@gmail.com</span>
               </div>
               
               <div className="flex items-center space-x-4 group hover:translate-x-2 transition-transform duration-300">

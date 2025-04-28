@@ -21,7 +21,8 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>• AXDS</title>
+        <title>• 𝖆𝖝𝖉𝖘 •</title>
+        <link rel="icon" href="/rose.jpg" type="image/jpeg" />
       </Head>
       <div className={`${inter.variable} ${robotoMono.variable} font-sans`}>
         <Component {...pageProps} />

@@ -73,7 +73,7 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.8 }}
             >
-              Simplifier le complexe : votre infrastructure, optimisée.
+              Simplifier le complexe.
             </motion.p>
             
             <motion.div
